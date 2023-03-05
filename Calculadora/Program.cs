@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using System;
 
 internal class Program
 {
@@ -23,36 +23,66 @@ internal class Program
             switch (option)
             {
                 case 1:
-                    Console.WriteLine("A soma é igual a " + (number1 + number2).ToString("F2"));
-                    Console.ReadKey();    
+                    Sum();
                     break;
                 case 2:
-                    Console.WriteLine("A subtração é igual a " + (number1 - number2).ToString("F2"));
-                    Console.ReadKey();
+                    Sub();
                     break;
                 case 3:
-                    Console.WriteLine("A multiplicação é igual a " + (number1 * number2).ToString("F2"));
-                    Console.ReadKey();
+                    Mult();
                     break;
                 case 4:
-                    if (number2 == 0)
-                    {
-                        Console.WriteLine("Não é possível realizar a divisão por ZERO!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("A divisão é igual a " + (number1 / number2).ToString("F2"));
-                    }
-                    Console.ReadKey();
+                    Div();
                     break;
                 case 5:
-                    Console.WriteLine("Ok, até mais!");
+                    Bye();
                     break;
                 default:
-                    Console.WriteLine("Valor informado inválido. Por favor, aperte a tecla ENTER e digite um valor válido");
-                    Console.ReadKey();
+                    Error();
                     break;
             }
+        }
+
+        void Sum()
+        {
+            Console.WriteLine("A soma é igual a " + (number1 + number2).ToString("F2"));
+            Console.ReadKey();
+        }
+
+        void Sub()
+        {
+            Console.WriteLine("A subtração é igual a " + (number1 - number2).ToString("F2"));
+            Console.ReadKey();
+        }
+
+        void Mult()
+        {
+            Console.WriteLine("A multiplicação é igual a " + (number1 * number2).ToString("F2"));
+            Console.ReadKey();
+        }
+
+        void Div()
+        {
+            if (number2 == 0)
+            {
+                Console.WriteLine("Não é possível realizar a divisão por ZERO!");
+            }
+            else
+            {
+                Console.WriteLine("A divisão é igual a " + (number1 / number2).ToString("F2"));
+            }
+            Console.ReadKey();
+        }
+
+        void Bye()
+        {
+            Console.WriteLine("Ok, até mais!");
+        }
+
+        void Error()
+        {
+            Console.WriteLine("Valor informado inválido. Por favor, aperte a tecla ENTER e digite um valor válido");
+            Console.ReadKey();
         }
 
         Console.Write("Digite o 1° número: ");
